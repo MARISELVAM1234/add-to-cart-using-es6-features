@@ -1,0 +1,17 @@
+.btn-container{
+    display: flex;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    transform: translateY(250px);
+}
+.btn-container button{
+    margin-left: 20px;
+    background-color: #E653C4;
+    border-color: #F05680;
+    color: azure;
+    box-shadow: 2px 2px 7px black;
+    /* height: 40px;
+    width: 150px; */
+    padding: 10px;
+    font-size: 20px;
+}
