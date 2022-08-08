@@ -69,8 +69,7 @@ let addBtn = document.querySelector("#add-btn");
 addBtn.addEventListener("click", () => {
   let inputValue = parseInt(valElement.value);
   aircoolers.map((element) => {
-    if (element.id === inputValue && !arr.includes(element)) {
-      console.log("Input value : ", inputValue);
+    if (element.id === inputValue && !(arr.includes(element))) {
       arr.push(element);
       valElement.value = "";
     }
@@ -80,14 +79,16 @@ addBtn.addEventListener("click", () => {
 //remove-btn part
 var removeElement = document.querySelector("#remove-btn");
 removeElement.addEventListener("click", () => {
-  let inputValue = parseInt(valElement.value );
-  console.log(inputValue );
-var remove = (ele)=>{
-  // var ab  = arr[ac]
-return ele.id < inputValue
-}
-var filterEle =arr.filter(remove)
-console.log(filterEle);
+  let inputValue = parseInt(valElement.value);
+  var index = arr.findIndex((val) => {
+    return val.id == inputValue;
+  });
+   var elem = arr.at(index);
+  arr = arr.filter(item => { 
+    return item !== elem
+  });
+console.log(arr);
+valElement.value = "";
 });
 
 //view-btn-part
@@ -95,3 +96,8 @@ var viewElement = document.querySelector("#view-btn");
 viewElement.addEventListener("click", () => {
   console.log(arr);
 });
+
+let av = [ 1,2,33,4,5,6,8]
+for (let a of  av){
+  console.log(a);
+}
