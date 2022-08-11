@@ -80,12 +80,8 @@ addBtn.addEventListener("click", () => {
 var removeElement = document.querySelector("#remove-btn");
 removeElement.addEventListener("click", () => {
   let inputValue = parseInt(valElement.value);
-  var index = arr.findIndex((val) => {
-    return val.id == inputValue;
-  });
-   var elem = arr.at(index);
   arr = arr.filter(item => { 
-    return item !== elem
+    return item.id  !== inputValue
   });
 console.log(arr);
 valElement.value = "";
@@ -96,8 +92,3 @@ var viewElement = document.querySelector("#view-btn");
 viewElement.addEventListener("click", () => {
   console.log(arr);
 });
-
-let av = [ 1,2,33,4,5,6,8]
-for (let a of  av){
-  console.log(a);
-}
